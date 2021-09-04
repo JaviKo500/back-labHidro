@@ -17,6 +17,12 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/*
+ * Modelo de la tabla Servicios,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
+
 @Entity
 @Table(name = "servicios")
 public class Servicio implements Serializable{
@@ -27,7 +33,6 @@ public class Servicio implements Serializable{
 	
 	private String nombre;
 	private String descripcion;
-	private String img;
 
 	
 	@Column(name = "create_at")
@@ -67,14 +72,6 @@ public class Servicio implements Serializable{
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
 	}
 
 	public Date getCreateAt() {

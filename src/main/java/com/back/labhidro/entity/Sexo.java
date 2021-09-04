@@ -9,6 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*
+ * Modelo de la tabla Sexo,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
+
 @Entity
 @Table(name = "sexos")
 public class Sexo implements Serializable {

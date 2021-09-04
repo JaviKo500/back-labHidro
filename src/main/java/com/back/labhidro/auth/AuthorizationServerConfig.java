@@ -13,6 +13,13 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
+/*
+ * Configuracion el servidor de authorizacion
+ * Configuracion nombre cliente
+ * Configuracion contraseña
+ * Configuracion Token "validacion, firma, tiempo"
+ * */
+
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter{

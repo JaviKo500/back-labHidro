@@ -15,6 +15,12 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/*
+ * Modelo de la tabla PaqueteServicio,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
+
 @Entity
 @Table(name = "paquetes_servicios")
 public class PaqueteServicio implements Serializable{
@@ -25,7 +31,6 @@ public class PaqueteServicio implements Serializable{
 	
 	private String nombre;
 	private String descripcion;
-	private String img;
 	private Double precio;
 	private Boolean disponible;
 
@@ -57,14 +62,6 @@ public class PaqueteServicio implements Serializable{
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
 	}
 
 	public Double getPrecio() {

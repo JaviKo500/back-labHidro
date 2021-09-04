@@ -84,7 +84,6 @@ public class ServicioControladorRest {
 			servicioAct.setNombre(servicio.getNombre());
 			servicioAct.setDescripcion(servicio.getDescripcion());
 			servicioAct.setDisponible(servicio.getDisponible());
-			servicioAct.setImg(servicio.getImg());
 			servicioAct.setTipoServicio(tipo);
 			servicioServ.crearServicio(servicioAct);
 		} catch (DataAccessException ex) {

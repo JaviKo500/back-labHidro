@@ -22,6 +22,12 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/*
+ * Modelo de la tabla clientes,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
+
 @Entity
 @Table(name = "clientes")
 public class Cliente implements Serializable{

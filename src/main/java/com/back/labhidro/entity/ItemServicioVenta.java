@@ -12,6 +12,12 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/*
+ * Modelo de la tabla ItemServicioVenta,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
+
 @Entity
 @Table(name = "items_servicio_venta")
 public class ItemServicioVenta implements Serializable{
@@ -28,6 +34,7 @@ public class ItemServicioVenta implements Serializable{
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Servicio servicio;
 	
+	// calculamos total del costo del item
 	public Double getImporte() {
 		return (cantidadMl * 0.01)+ (cantidadLugar* 100) * cantidad.doubleValue();
 	}

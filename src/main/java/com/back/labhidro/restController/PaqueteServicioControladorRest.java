@@ -81,7 +81,6 @@ public class PaqueteServicioControladorRest {
 			paqueteAct.setNombre(paquete.getNombre());
 			paqueteAct.setDescripcion(paquete.getDescripcion());
 			paqueteAct.setDisponible(paquete.getDisponible());
-			paqueteAct.setImg(paquete.getImg());
 			paqueteAct.setItemsPaquete(paquete.getItemsPaquete());
 			paqueteServicio.crearPaqueteServicio(paqueteAct);
 		} catch (DataAccessException ex) {

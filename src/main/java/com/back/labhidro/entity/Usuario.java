@@ -13,7 +13,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-
+/*
+ * Modelo de la tabla Usuarios,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
 
 @Entity
 @Table(name = "usuarios")

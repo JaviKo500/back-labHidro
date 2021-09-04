@@ -1,6 +1,7 @@
 package com.back.labhidro.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,6 +11,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+/*
+ * 
+ * Configuracion de seguridad del springboot
+ * 
+ * */
 
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{

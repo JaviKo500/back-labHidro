@@ -21,6 +21,12 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/*
+ * Modelo de la tabla Ventas,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
+
 @Entity
 @Table(name = "ventas")
 public class Venta implements Serializable{
@@ -126,6 +132,8 @@ public class Venta implements Serializable{
 	public void setPaquetes(List<ItemPaqueteVenta> paquetes) {
 		this.paquetes = paquetes;
 	}
+	
+	// calculamos total del costo del de la venta
 	public Double getTotal() {
 		total = 0.00;
 		for (ItemServicioVenta item: servicios) {

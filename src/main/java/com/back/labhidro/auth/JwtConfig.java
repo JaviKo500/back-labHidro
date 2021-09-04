@@ -1,7 +1,11 @@
 package com.back.labhidro.auth;
 
+/*
+ * Configuracion firma publica y privada para el token
+ * 
+ * */
+
 public class JwtConfig {
-	//public static final String LLAVE_SECRETA = "javiko@500#1998";
 	
 	public static final String RSA_PRIVADA = "\r\n"
 			+ "-----BEGIN RSA PRIVATE KEY-----\r\n"

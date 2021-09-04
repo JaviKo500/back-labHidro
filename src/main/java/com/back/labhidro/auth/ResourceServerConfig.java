@@ -15,6 +15,12 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+/*
+ * Para dar accesos a las del back  a los usuarios segun su rol
+ * Configuracion de cors
+ * 
+ * */
+
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {

@@ -7,6 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/*
+ * Modelo de la tabla Matriz,  ORM
+ * Configuracion de los datos de la tabla y relaciones
+ * 
+ * */
+
 @Entity
 public class Matriz implements Serializable{
 	
@@ -19,7 +25,6 @@ public class Matriz implements Serializable{
 	private String direccion;
 	private String telefono;
 	private String email;
-	private String logo;
 
 	
 	public Long getId() {
@@ -68,14 +73,6 @@ public class Matriz implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getLogo() {
-		return logo;
-	}
-
-	public void setLogo(String logo) {
-		this.logo = logo;
 	}
 
 	private static final long serialVersionUID = 1L;
