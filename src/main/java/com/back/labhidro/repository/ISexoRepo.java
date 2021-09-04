@@ -5,6 +5,13 @@ import org.springframework.stereotype.Repository;
 
 import com.back.labhidro.entity.Sexo;
 
+/*
+ * @Autor: Javiko
+ * Repositorio JPA DAO de Sexo
+ * configuracion para las consultas a la base de datos
+ * 
+ * */
+
 @Repository
 public interface ISexoRepo extends JpaRepository<Sexo, Long>{
 	

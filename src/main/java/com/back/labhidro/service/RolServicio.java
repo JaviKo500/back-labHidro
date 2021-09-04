@@ -10,6 +10,14 @@ import com.back.labhidro.entity.Rol;
 import com.back.labhidro.interfaceService.IRolServicio;
 import com.back.labhidro.repository.IRolRepo;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Servicios para la comuncicacion de repositorio y controlador de Rol
+ * Leer, escribir y pasar datos
+ * 
+ * */
+
 @Service
 public class RolServicio implements IRolServicio{
 	

@@ -1,6 +1,8 @@
 package com.back.labhidro.auth;
 
 /*
+ * @Autor: Javiko
+ * 
  * Configuracion firma publica y privada para el token
  * 
  * */

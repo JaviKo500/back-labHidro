@@ -21,6 +21,14 @@ import com.back.labhidro.service.ClienteServicio;
 import com.back.labhidro.service.SexoServicio;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Cliente
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/cliente")
 public class ClienteControladorRest {

@@ -18,6 +18,14 @@ import com.back.labhidro.entity.PaqueteServicio;
 import com.back.labhidro.service.PaqueteServicioS;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de PaqueteServico
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/paquete")
 public class PaqueteServicioControladorRest {

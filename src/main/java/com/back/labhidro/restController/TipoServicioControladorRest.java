@@ -18,6 +18,14 @@ import com.back.labhidro.entity.TipoServicio;
 import com.back.labhidro.service.TipoServicioS;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Tipo
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/tipo")
 public class TipoServicioControladorRest {

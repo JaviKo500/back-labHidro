@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla ServicioItem,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 
@@ -25,6 +27,8 @@ public class ServicioItem implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	// Mapeo relaciones para la BD
+	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Servicio servicio;

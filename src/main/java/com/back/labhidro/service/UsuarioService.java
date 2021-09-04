@@ -17,6 +17,14 @@ import com.back.labhidro.entity.Usuario;
 import com.back.labhidro.interfaceService.IUsuarioService;
 import com.back.labhidro.repository.IUsuarioRepo;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Servicios para la comuncicacion de repositorio y controlador de Usuario
+ * Leer, escribir y pasar datos
+ * 
+ * */
+
 @Service
 public class UsuarioService implements IUsuarioService, UserDetailsService{
 	@Autowired

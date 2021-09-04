@@ -19,6 +19,14 @@ import com.back.labhidro.entity.Usuario;
 import com.back.labhidro.service.UsuarioService;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Usuario
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioControladorRest {

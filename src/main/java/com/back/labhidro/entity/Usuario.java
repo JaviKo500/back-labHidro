@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla Usuarios,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 
@@ -32,6 +34,8 @@ public class Usuario implements Serializable{
 	private String password;
 	private Boolean estado;
 
+	// Mapeo relaciones para la BD
+	
 	@ManyToMany
 	@JoinTable(name = "usuarios_roles",
 	joinColumns = @JoinColumn(name="usuario_id"), 

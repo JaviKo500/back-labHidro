@@ -20,9 +20,18 @@ import com.back.labhidro.service.MatrizServicio;
 import com.back.labhidro.service.VentaServicio;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Venta
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/venta")
 public class VentaControladorRest {
+	
 	@Autowired
 	private VentaServicio ventaServicio;
 	@Autowired
@@ -63,7 +72,7 @@ public class VentaControladorRest {
 			venta.setCliente(cliente);
 			venta.setMatriz(matriz);
 			if(venta.getPaquetes().size() > 0 || venta.getServicios().size() > 0) {
-				venta = calcularTotal(venta);
+				venta = ventaServicio.calcularTotal(venta);
 			}
 			nuevoVenta = ventaServicio.crearVenta(venta);
 		} catch (DataAccessException ex) {
@@ -72,17 +81,6 @@ public class VentaControladorRest {
 		return respAccion.accionCumplida(true, "Venta realizada", nuevoVenta);
 	}
 	
-	// calculamos los costos
-	public Venta calcularTotal( Venta venta) {
-		Double total = venta.getTotal();
-		Double subTotal = total/1.12;
-		Double iva =  total-subTotal;
-		venta.setTotal(total);
-		venta.setIva(iva);
-		venta.setSubtotal(subTotal);
-		return venta;
-	}
-
 	@DeleteMapping("/eliminar/{id}")
 	public ResponseEntity<?> eliminarVenta(@PathVariable String id){
 		Long _id = null;

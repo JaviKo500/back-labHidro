@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla Tipo_Servicios,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 

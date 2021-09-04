@@ -19,10 +19,17 @@ import com.back.labhidro.entity.Sexo;
 import com.back.labhidro.service.SexoServicio;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Sexo
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/sexo")
 public class SexoControladorRest {
-	
 
 	@Autowired
 	private SexoServicio sexoServicio;

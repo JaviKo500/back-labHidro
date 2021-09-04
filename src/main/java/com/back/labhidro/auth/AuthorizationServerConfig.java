@@ -14,6 +14,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 /*
+ * @Autor: Javiko
+ * 
  * Configuracion el servidor de authorizacion
  * Configuracion nombre cliente
  * Configuracion contraseña

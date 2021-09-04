@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla ItemPaqueteVenta,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 
@@ -27,6 +29,8 @@ public class ItemPaqueteVenta implements Serializable{
 	private Long id;
 	
 	private Integer cantidad;
+	
+	// Mapeo relaciones para la BD
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)

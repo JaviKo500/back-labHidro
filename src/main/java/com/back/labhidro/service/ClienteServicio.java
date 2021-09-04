@@ -10,6 +10,14 @@ import com.back.labhidro.entity.Cliente;
 import com.back.labhidro.interfaceService.IClienteServicio;
 import com.back.labhidro.repository.IClienteRepo;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Servicios para la comuncicacion de repositorio y controlador de Cliente
+ * Leer, escribir y pasar datos
+ * 
+ * */
+
 @Service
 public class ClienteServicio implements IClienteServicio{
 	

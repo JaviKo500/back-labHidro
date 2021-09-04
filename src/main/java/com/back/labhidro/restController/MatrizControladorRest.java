@@ -17,9 +17,18 @@ import com.back.labhidro.entity.Matriz;
 import com.back.labhidro.service.MatrizServicio;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Matriz
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/matriz")
 public class MatrizControladorRest {
+	
 	@Autowired
 	private MatrizServicio matrizServicio;
 	@Autowired 

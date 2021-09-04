@@ -18,9 +18,18 @@ import com.back.labhidro.entity.Rol;
 import com.back.labhidro.service.RolServicio;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Rol
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/rol")
 public class RolControladorRest {
+	
 	@Autowired
 	private RolServicio rolService;
 	

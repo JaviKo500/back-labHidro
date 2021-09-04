@@ -23,6 +23,8 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla clientes,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 
@@ -57,6 +59,8 @@ public class Cliente implements Serializable{
 	
 	private Boolean estado;
 	
+	// Mapeo relaciones para la BD
+	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Sexo sexo;
@@ -70,7 +74,6 @@ public class Cliente implements Serializable{
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente", cascade = CascadeType.ALL)
 	private List<Venta> ventas;
 	
-	// constructor
 	
 	public Cliente() {
 		this.ventas = new ArrayList<>();

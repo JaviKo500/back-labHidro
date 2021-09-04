@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla Matriz,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 

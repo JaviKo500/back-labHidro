@@ -10,6 +10,14 @@ import com.back.labhidro.entity.Servicio;
 import com.back.labhidro.interfaceService.IServicioServi;
 import com.back.labhidro.repository.IServicioRepo;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Servicios para la comuncicacion de repositorio y controlador de Servicio
+ * Leer, escribir y pasar datos
+ * 
+ * */
+
 @Service
 public class ServicioS implements IServicioServi{
 	

@@ -22,6 +22,8 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla Ventas,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 
@@ -41,6 +43,8 @@ public class Venta implements Serializable{
 	
 	@Temporal(TemporalType.DATE)
 	private Date fechaCompra;
+	
+	// Mapeo relaciones para la BD
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@OneToOne

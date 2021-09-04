@@ -7,6 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import com.back.labhidro.entity.Usuario;
 
+/*
+ * @Autor: Javiko
+ * Repositorio JPA DAO de Usuario
+ * configuracion para las consultas a la base de datos
+ * 
+ * */
+
 @Repository
 public interface IUsuarioRepo extends JpaRepository<Usuario, Long>{
 	public List<Usuario> findByEstado(Boolean estado);

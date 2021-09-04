@@ -16,6 +16,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 /*
+ * @Autor: Javiko
+ * 
  * Para dar accesos a las del back  a los usuarios segun su rol
  * Configuracion de cors
  * 

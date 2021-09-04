@@ -10,6 +10,14 @@ import com.back.labhidro.entity.Sexo;
 import com.back.labhidro.interfaceService.ISexoServicio;
 import com.back.labhidro.repository.ISexoRepo;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Servicios para la comuncicacion de repositorio y controlador de Sexo
+ * Leer, escribir y pasar datos
+ * 
+ * */
+
 @Service
 public class SexoServicio implements ISexoServicio{
 	

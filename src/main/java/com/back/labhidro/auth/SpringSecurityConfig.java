@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /*
+ * @Autor: Javiko
  * 
  * Configuracion de seguridad del springboot
  * 

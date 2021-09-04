@@ -18,6 +18,8 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla Servicios,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 
@@ -45,6 +47,8 @@ public class Servicio implements Serializable{
 	}
 	
 	private Boolean disponible;
+	
+	// Mapeo relaciones para la BD
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@ManyToOne(fetch = FetchType.LAZY)

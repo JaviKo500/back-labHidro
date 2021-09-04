@@ -20,9 +20,18 @@ import com.back.labhidro.service.ServicioS;
 import com.back.labhidro.service.TipoServicioS;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Controlador para el crud de Servicios
+ * Configuracion de endpoints para el api HTTP
+ * 
+ * */
+
 @RestController
 @RequestMapping("/api/servicio")
 public class ServicioControladorRest {
+	
 	@Autowired
 	private ServicioS servicioServ;
 	@Autowired

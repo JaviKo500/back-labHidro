@@ -10,6 +10,14 @@ import com.back.labhidro.entity.TipoServicio;
 import com.back.labhidro.interfaceService.ITipoServicio;
 import com.back.labhidro.repository.ITipoServicioRepo;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Servicios para la comuncicacion de repositorio y controlador de TipoServicio
+ * Leer, escribir y pasar datos
+ * 
+ * */
+
 @Service
 public class TipoServicioS implements ITipoServicio{
 	

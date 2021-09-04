@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /*
+ * @Autor: Javiko
+ * 
  * Modelo de la tabla Roles,  ORM
  * Configuracion de los datos de la tabla y relaciones
  * 

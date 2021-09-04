@@ -10,6 +10,14 @@ import com.back.labhidro.entity.PaqueteServicio;
 import com.back.labhidro.interfaceService.IPaqueteServicio;
 import com.back.labhidro.repository.IPaqueteServicioRepo;
 
+/*
+ * @Autor: Javiko
+ * 
+ * Servicios para la comuncicacion de repositorio y controlador de PaqueteServicio
+ * Leer, escribir y pasar datos
+ * 
+ * */
+
 @Service
 public class PaqueteServicioS implements IPaqueteServicio{
 	

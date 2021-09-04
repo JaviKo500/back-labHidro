@@ -5,6 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import com.back.labhidro.entity.Matriz;
 
+/*@Autor: Javiko
+ * Repositorio JPA DAO de Matrz
+ * configuracion para las consultas a la base de datos
+ * 
+ * */
+
 @Repository
 public interface IMatrizRepo extends JpaRepository<Matriz, Long>{
 
