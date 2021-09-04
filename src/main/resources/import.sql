@@ -1,14 +1,11 @@
 -- insertamos roles
-insert into roles( nombre, descripcion, estado) values ( 'ROL_ADMIN', 'Tiene acceso a todos los modulos del sistema', true);
-insert into roles( nombre, descripcion, estado) values ( 'ROL_VENTA', 'Tene acceso solo al módulo e ventas', true);
-insert into roles( nombre, descripcion, estado) values ( 'ROL_SERVICIO', 'Tiene acceso solo al módulo de servicios', true);
+insert into roles( nombre, descripcion, estado) values ( 'ROLE_ADMIN', 'Tiene acceso a todos los modulos del sistema', true);
+insert into roles( nombre, descripcion, estado) values ( 'ROLE_VENTA', 'Tene acceso solo al módulo e ventas', true);
+insert into roles( nombre, descripcion, estado) values ( 'ROLE_SERVICIO', 'Tiene acceso solo al módulo de servicios', true);
 
-INSERT INTO usuarios (nombre, password, estado, email) VALUES ('andres','12345',true, 'javiko@gmail.com'); 
-INSERT INTO usuarios (nombre, password, estado, email) VALUES ('admin', '12345',true, 'guty@gmail.com'); 
+INSERT INTO usuarios (nombre, password, estado, email) VALUES ('admin', '$2a$10$Zdw/FqSgfRV7oJ34gDONPO0ACv9lO87eMsfWN.mLSKgWeNNX7xady',true, 'guty@gmail.com'); 
 
 INSERT INTO usuarios_roles (usuario_id, rol_id) VALUES (1,1);
-INSERT INTO usuarios_roles (usuario_id, rol_id) VALUES (2,2);
-INSERT INTO usuarios_roles (usuario_id, rol_id) VALUES (2,1);
 
 insert into sexos(tipo, estado) values ('hombre', true);
 insert into sexos(tipo, estado) values ('mujer', true);

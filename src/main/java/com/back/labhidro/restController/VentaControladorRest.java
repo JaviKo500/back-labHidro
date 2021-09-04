@@ -72,6 +72,7 @@ public class VentaControladorRest {
 		return respAccion.accionCumplida(true, "Venta realizada", nuevoVenta);
 	}
 	
+	// calculamos los costos
 	public Venta calcularTotal( Venta venta) {
 		Double total = venta.getTotal();
 		Double subTotal = total/1.12;

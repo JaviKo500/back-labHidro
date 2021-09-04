@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,9 @@ public class UsuarioControladorRest {
 	@Autowired
 	private UsuarioService usuarioService;
 	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+	
 	@Autowired 
 	private RespuestaAccion respAccion;
 	
@@ -34,7 +38,7 @@ public class UsuarioControladorRest {
 		if(usuarios.size() == 0) {
 			return respAccion.listaDatosVacia(false, "No hay datos");
 		}
-		return respAccion.accionCumplida(true, "Lista de Matriz", usuarios);
+		return respAccion.accionCumplida(true, "Lista de usuarios", usuarios);
 	}
 	@GetMapping("/lista/estado")
 	public ResponseEntity<?> listaUsuarioEstado(){
@@ -49,6 +53,7 @@ public class UsuarioControladorRest {
 	public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario){
 		Usuario nuevoUsuario = null;
 		try {
+			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 			nuevoUsuario = usuarioService.crearUsuario(usuario);
 		} catch (DataAccessException ex) {
 			return respAccion.errorBD(false, ex.getMessage());
@@ -71,7 +76,7 @@ public class UsuarioControladorRest {
 		try {
 			usuActual.setEmail(usuario.getEmail());
 			usuActual.setNombre(usuario.getNombre());
-			usuActual.setPassword(usuario.getPassword());
+			usuActual.setPassword(passwordEncoder.encode(usuario.getPassword()));
 			usuActual.setRoles(usuario.getRoles());
 			usuActual.setEstado(usuario.getEstado());
 			//usuActual.setPassword(passwordEncoder.encode(usuario.getPassword()));

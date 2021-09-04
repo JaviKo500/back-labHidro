@@ -10,4 +10,5 @@ import com.back.labhidro.entity.Usuario;
 @Repository
 public interface IUsuarioRepo extends JpaRepository<Usuario, Long>{
 	public List<Usuario> findByEstado(Boolean estado);
+	public Usuario findByNombreAndEstado(String nombre, Boolean estado);
 }
