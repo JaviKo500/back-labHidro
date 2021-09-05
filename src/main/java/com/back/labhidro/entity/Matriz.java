@@ -27,6 +27,7 @@ public class Matriz implements Serializable{
 	private String direccion;
 	private String telefono;
 	private String email;
+	private String logo;
 
 	
 	public Long getId() {
@@ -75,6 +76,14 @@ public class Matriz implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
 	}
 
 	private static final long serialVersionUID = 1L;

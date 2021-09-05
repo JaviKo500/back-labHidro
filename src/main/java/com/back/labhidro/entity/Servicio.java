@@ -35,7 +35,7 @@ public class Servicio implements Serializable{
 	
 	private String nombre;
 	private String descripcion;
-
+	private String img;
 	
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
@@ -76,6 +76,14 @@ public class Servicio implements Serializable{
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public Date getCreateAt() {

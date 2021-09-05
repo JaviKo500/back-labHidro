@@ -35,6 +35,7 @@ public class PaqueteServicio implements Serializable{
 	private String descripcion;
 	private Double precio;
 	private Boolean disponible;
+	private String img;
 
 	// Mapeo relaciones para la BD
 	
@@ -81,6 +82,14 @@ public class PaqueteServicio implements Serializable{
 
 	public void setDisponible(Boolean disponible) {
 		this.disponible = disponible;
+	}
+	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public List<ServicioItem> getItemsPaquete() {

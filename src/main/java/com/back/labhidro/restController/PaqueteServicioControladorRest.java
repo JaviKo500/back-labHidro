@@ -1,9 +1,13 @@
 package com.back.labhidro.restController;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +16,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.back.labhidro.entity.PaqueteServicio;
+import com.back.labhidro.imagenes.RutaImagenes;
+import com.back.labhidro.imagenes.UploadFileImagen;
 import com.back.labhidro.service.PaqueteServicioS;
 import com.back.labhidro.validaciones.RespuestaAccion;
 
@@ -36,6 +44,9 @@ public class PaqueteServicioControladorRest {
 	@Autowired 
 	private RespuestaAccion respAccion;
 	
+	@Autowired
+	private UploadFileImagen uploadService;
+	
 	@GetMapping("/lista")
 	public ResponseEntity<?> listaPaquetesServicio(){
 		List<PaqueteServicio> paquetes = paqueteServicio.listaPaquetesServicio();
@@ -53,6 +64,20 @@ public class PaqueteServicioControladorRest {
 		return respAccion.accionCumplida(true, "Lista de paquetes", paquetes);
 	}
 	
+	@GetMapping("/uploads/img/{nombreFoto:.+}")
+	public ResponseEntity<Resource> verImg(@PathVariable String nombreFoto){
+		Resource recurso = null;
+		try {
+			recurso = uploadService.cargar(nombreFoto, RutaImagenes.RUTA_PAQUETES);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		HttpHeaders cabecera = new HttpHeaders();
+		cabecera.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+ recurso.getFilename() + "\"");
+		return new ResponseEntity<Resource>(recurso, cabecera,	 HttpStatus.OK);
+	}
+	
+	
 	@PostMapping("/crear")
 	public ResponseEntity<?> crearPaqueteServicio(@RequestBody PaqueteServicio paquete){
 		if(paquete == null) {			
@@ -68,6 +93,24 @@ public class PaqueteServicioControladorRest {
 			System.out.println(ex);
 		}
 		return respAccion.accionCumplida(true, "Paquete creado", paqueteNuevo);
+	}
+	
+	@PostMapping("/img-upload")
+	public ResponseEntity<?> imgUpload(@RequestParam("archivo") MultipartFile archivo, @RequestParam("id") Long id){
+		PaqueteServicio paquete = paqueteServicio.buscarPaqueteServicio(id);
+		if(!archivo.isEmpty()) {
+			String nombreArchivo = null;
+			try {
+				nombreArchivo = uploadService.copiar(archivo, RutaImagenes.RUTA_PAQUETES);
+			} catch (Exception e) {
+				return respAccion.errorBD(false, "No se pudo cargar la img");
+			}
+			String nombreFotoAnterior = paquete.getImg();
+			uploadService.eliminar(nombreFotoAnterior, RutaImagenes.RUTA_PAQUETES);
+			paquete.setImg(nombreArchivo);
+			paqueteServicio.crearPaqueteServicio(paquete);
+		}
+		return respAccion.accionCumplida(true, "Imagen subida", "Acción realizada");
 	}
 	
 	@PutMapping("/actualizar/{id}")
@@ -90,6 +133,7 @@ public class PaqueteServicioControladorRest {
 			paqueteAct.setDescripcion(paquete.getDescripcion());
 			paqueteAct.setDisponible(paquete.getDisponible());
 			paqueteAct.setItemsPaquete(paquete.getItemsPaquete());
+			
 			paqueteServicio.crearPaqueteServicio(paqueteAct);
 		} catch (DataAccessException ex) {
 			return respAccion.errorBD(false, "Error en la bd");
@@ -134,6 +178,9 @@ public class PaqueteServicioControladorRest {
 		}
 		
 		try {
+			PaqueteServicio paquete= paqueteServicio.buscarPaqueteServicio(_id);
+			String nombreFotoAnterior = paquete.getImg();
+			uploadService.eliminar(nombreFotoAnterior, RutaImagenes.RUTA_PAQUETES);
 			paqueteServicio.eliminarPaqueteServicio(_id);
 		} catch (DataAccessException ex) {
 			return respAccion.errorBD(false, "Error en la bd");

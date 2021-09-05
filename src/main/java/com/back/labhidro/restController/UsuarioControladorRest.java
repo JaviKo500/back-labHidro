@@ -61,6 +61,7 @@ public class UsuarioControladorRest {
 	public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario){
 		Usuario nuevoUsuario = null;
 		try {
+			// encriptamos la contraseña
 			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 			nuevoUsuario = usuarioService.crearUsuario(usuario);
 		} catch (DataAccessException ex) {
@@ -84,10 +85,10 @@ public class UsuarioControladorRest {
 		try {
 			usuActual.setEmail(usuario.getEmail());
 			usuActual.setNombre(usuario.getNombre());
+			// encriptamos la contraseña
 			usuActual.setPassword(passwordEncoder.encode(usuario.getPassword()));
 			usuActual.setRoles(usuario.getRoles());
 			usuActual.setEstado(usuario.getEstado());
-			//usuActual.setPassword(passwordEncoder.encode(usuario.getPassword()));
 			usuarioService.crearUsuario(usuActual);
 		} catch (DataAccessException e) {
 			return respAccion.errorBD(false, "Error en la bd");
